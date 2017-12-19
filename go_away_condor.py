@@ -6,6 +6,10 @@ Created on Tue Dec 19 10:01:08 2017
 @author: csh4
 
 MAKE CONDOR GO AWAY
+
+YOU ARE NOT WELCOME HERE
+
+GOOD BYE
 """
 
 import multiprocessing as mp
@@ -95,7 +99,6 @@ def get_busy_bogo():
         t_avg.append(np.mean(n_t))
         n_arr.append(n)
         gc.collect()
-    print("done! (shouldn't happen)")
     return np.array(t_avg)/np.array(n_arr)
     
 """
@@ -177,7 +180,7 @@ def main(me=os.getlogin(), timeout=None, cpup_allowance=50, mem_allowance=15,
         verbose = bool
             Whether or not to print out which user is hogging the CPUs
     """
-    print("Watching for Condor")
+    if verbose: print("Watching for Condor")
     if timeout == None:
         while True:
             check_usage(me,
@@ -187,6 +190,7 @@ def main(me=os.getlogin(), timeout=None, cpup_allowance=50, mem_allowance=15,
                         mem_allowance  = mem_allowance,
                         verbose        = verbose)
             time.sleep(sampling)
+            if verbose: print(".", end="")
     else:
         for i in range(timeout):
             if i % sampling == 0:
@@ -197,6 +201,7 @@ def main(me=os.getlogin(), timeout=None, cpup_allowance=50, mem_allowance=15,
                             mem_allowance  = mem_allowance,
                             verbose        = verbose)
             time.sleep(1)
+            if verbose: print(".", end="")
                 
 
 if __name__ == "__main__":
