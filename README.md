@@ -18,3 +18,7 @@ In theory Condor vacates your computer when you start using resources, but in pr
   - This is an overengineered mess of a module.
   
 Indeed. Imagine what my research code looks like.
+
+  - How do I use this code?
+
+Run it as a script. Or if you want to customize for your own usage, call main() with various parameters - they're pretty self explanatory.
