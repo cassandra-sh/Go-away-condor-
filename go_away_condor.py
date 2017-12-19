@@ -5,11 +5,17 @@ Created on Tue Dec 19 10:01:08 2017
 
 @author: csh4
 
-MAKE CONDOR GO AWAY
-
-YOU ARE NOT WELCOME HERE
-
-GOOD BYE
+            _,,,,,,,_
+          ,88888888888,
+        ,888'       `888,
+        888' 0     0 `888
+       888      0      888
+       888             888
+       888    ,000,    888
+        888, 0     0 ,888
+        '888,       ,888'
+          '8JGS8888888'
+            ````````
 """
 
 import multiprocessing as mp
