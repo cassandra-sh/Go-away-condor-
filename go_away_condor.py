@@ -51,7 +51,7 @@ def get_usage(resource):
     """
     cmd = ""
     if    resource == "mem_p":    cmd = get_mem_p
-    elif  resource == "cpu_p":  cmd = get_cpu_p
+    elif  resource == "cpu_p":    cmd = get_cpu_p
     else: raise ValueError(str(resource) +
                            " is not a valid input. Must be 'mem_p' or 'cpu_p'")
     popen = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
@@ -206,8 +206,8 @@ def main(me=os.getlogin(), timeout=None, cpup_allowance=50, mem_allowance=15,
                             slowdown       = slowdown,
                             mem_allowance  = mem_allowance,
                             verbose        = verbose)
+                if verbose: print(".", end="")
             time.sleep(1)
-            if verbose: print(".", end="")
                 
 
 if __name__ == "__main__":
